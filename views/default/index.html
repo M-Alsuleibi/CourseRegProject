@@ -1,6 +1,74 @@
-{{extend 'layout.html'}}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Course Registration</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			font-size: 36px;
+			color: #333;
+			margin: 50px 0 20px;
+			text-align: center;
+		}
+		p {
+			font-size: 18px;
+			color: #666;
+			margin: 20px 0;
+			text-align: center;
+		}
+		.btn {
+			display: inline-block;
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+        h3{
+            display: inline-block;
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+         	margin-bottom: 2px;
 
-{{for course in courses:}}
-<h5>{{=course['code']}}</h5>
-<h2>{{=course['name']}}</h2>
-{{pass}}
+			font-size: 20px;
+			border: none;
+			border-radius: 5px;
+        }
+		.btn:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to Course Registration</h1>
+	<p>Thank you for choosing our university to pursue your education. Please select an option below to get started:</p>
+	<div style="text-align:center;" class="dropdown-menu dropdown-menu-right">
+		<!-- <a href="{{=URL('student/login')}}" class="btn">Student Login</a> -->
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+          <li class="nav-item dropdown">
+           <h3>Student Login</h3>           
+            <div class="dropdown-menu dropdown-menu-right">
+              
+              <a class="btn" href="/CourseRegProject/default/user/login">Login</a>
+              
+              <a class="btn" href="/CourseRegProject/default/user/register">Sign up</a>
+              
+              
+              <a class="btn" href="/CourseRegProject/default/user/retrieve_password">Lost Password</a>
+              
+              
+            </div>
+          </li>
+        </ul>
+		<a href="/admin/default/site" class="btn">Admin Login</a>
+	</div>
+</body>
+</html>
